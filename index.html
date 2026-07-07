@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loading...</title>
+
+<style>
+    html, body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        background: #ffffff;
+        overflow: hidden;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .container {
+        text-align: center;
+    }
+
+    .spinner {
+        width: 48px;
+        height: 48px;
+        margin: 0 auto 20px;
+        border: 5px solid #e5e5e5;
+        border-top: 5px solid #4285f4;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+    }
+
+    .text {
+        color: #555;
+        font-size: 18px;
+        user-select: none;
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+</style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="spinner"></div>
+        <div class="text">Loading, please wait...</div>
+    </div>
+
+    <script>
+        // Prevent the page from ever finishing loading visually.
+        window.addEventListener("load", () => {
+            document.title = "Loading...";
+        });
+    </script>
+</body>
+</html>
